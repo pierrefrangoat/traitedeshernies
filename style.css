@@ -115,3 +115,44 @@ a:hover { text-decoration: none; }
     background: #333;                 /* slightly lighter on hover */
     transform: scale(1.05);
 }
+
+/* -------------- Conteneur global ---------------- */
+.wrapper {
+    display: flex;                 /* ← aligne les enfants sur la même ligne */
+    gap: 1rem;                     /* espace entre le menu et le contenu */
+    max-width: 1200px;             /* largeur maximale (ajustable) */
+    margin: 0 auto;                /* centre horizontalement */
+}
+
+/* -------------- Menu --------------------------- */
+.nav {
+    flex: 0 0 200px;               /* largeur fixe du menu (peut être adaptée) */
+    display: flex;
+    flex-direction: column;       /* empile les boutons/SELECT verticalement */
+    gap: 0.5rem;
+}
+
+/* -------------- Zone de contenu ---------------- */
+.content {
+    flex: 1;                       /* prend tout l’espace restant */
+    max-height: 80vh;              /* hauteur maximale, évite le débordement de page */
+    overflow-y: auto;              /* scroll interne si le texte est long */
+    padding: 1rem;
+    border-left: 1px solid #ddd;  /* séparateur visuel (optionnel) */
+}
+
+/* -------------- Chapitres ---------------------- */
+.chapter {
+    display: none;                 /* caché par défaut */
+}
+.chapter.active {
+    display: block;                /* affiché lorsqu’il a la classe “active” */
+}
+
+/* -------------- Quelques styles utiles --------- */
+button.nav__link,
+select#chapterDropdown {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.95rem;
+}
