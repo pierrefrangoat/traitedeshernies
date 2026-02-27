@@ -4,199 +4,106 @@
 <meta charset="utf-8">
 <title>Lecteur thématique</title>
 
+
 <style>
-        body { margin: 0; font-family: Georgia, serif; display: flex; height: 100vh; background-color: #f8f8f8; }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 280px; background-color: #333; color: white; padding: 1rem; overflow-y: auto;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        }
-        .menu-item { margin: 1rem 0 0.5rem; cursor: default; font-weight: bold; }
-        .submenu-item {
-            margin: 0.2rem 0; cursor: pointer; padding: 0.3rem; border-radius: 4px;
-        }
-        .submenu-item:hover { background-color: #555; }
-        .content {
-            margin-left: 280px;
-            margin-left: 280px;
-            flex-grow: 1; padding: 2rem; overflow-y: auto;
-        }
-        .chapter { display: none; }
-        .chapter.active { display: block; }
-    
-
-body {
-    background: linear-gradient(to right, #ffe6f0, #ffe6ff);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-.sidebar {
-    background-color: #ffb6c1;
-    color: #fff;
-    box-shadow: 2px 0 10px rgba(255, 105, 180, 0.4);
-}
-.sidebar h2 {
-    font-size: 1.5rem;
-    color: white;
-}
-.menu-item {
-    background-color: #ffc0cb;
-    color: #fff;
-    margin: 0.4rem 0;
-    font-weight: bold;
-    border-radius: 10px;
-    border: 2px solid white;
-    box-shadow: 0 0 5px #ff69b4;
-}
-.menu-item:hover {
-    background-color: #ff69b4;
-}
-.submenu-item {
-    background-color: #fff0f5;
-    border-left: 3px solid #ff69b4;
-    border-radius: 8px;
-    margin: 2px 0;
-    color: #c71585;
-}
-.content {
-    background-color: #fffafa;
-    padding: 2rem;
-    color: #4b0082;
-}
-.chapter h1 {
-    color: #d63384;
-    border-bottom: 2px dashed #ff69b4;
-}
-
-
-body {
-    background: linear-gradient(to bottom right, #ffe0f0, #ffd6f5, #fff0fb);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    animation: shimmer 10s ease infinite;
-    color: #6a0dad;
-}
-@keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.sidebar {
-    background-color: #ff69b4;
-    color: white;
-    box-shadow: 3px 0 15px rgba(255, 105, 180, 0.6);
-    border-right: 4px dashed #ffc0cb;
-}
-.menu-item {
-    background: linear-gradient(to right, #ffc0cb, #ff69b4);
-    color: white;
-    margin: 0.6rem 0;
-    font-weight: bold;
-    border-radius: 15px;
-    padding: 0.5rem;
-    border: 2px solid #fff;
-    box-shadow: 0 0 8px #ff1493;
-    transition: transform 0.2s ease-in-out;
-}
-.menu-item:hover {
-    background-color: #ff1493;
-    transform: scale(1.05);
-}
-.submenu-item {
-    background-color: #ffe6f7;
-    border-left: 4px solid #ff1493;
-    border-radius: 10px;
-    margin: 4px 0;
-    color: #c71585;
-    padding-left: 0.5rem;
-    font-style: italic;
-}
-.content {
-    background-color: #fff0f5;
-    padding: 2rem;
-    color: #800080;
-    border-left: 5px solid #ff69b4;
-    box-shadow: inset 0 0 10px #ffc0cb;
-}
-.chapter h1 {
-    color: #d63384;
-    border-bottom: 3px dotted #ff69b4;
-    font-size: 2rem;
-    text-shadow: 1px 1px 2px #ff1493;
-}
-
-
-body {
-    background-color: #fdf6f9;
-    font-family: 'Georgia', serif;
-    color: #333;
-}
-.sidebar {
-    background-color: #e8b4c2;
-    color: #fff;
-    padding: 1rem;
-    border-right: 1px solid #ccc;
-}
-.sidebar h2 {
-    font-size: 1.2rem;
-    color: white;
-}
-.menu-item {
-    background-color: #f4d1dc;
-    color: #5a2a45;
-    padding: 0.4rem;
-    margin: 0.4rem 0;
-    border-radius: 6px;
-    font-weight: bold;
-    font-family: 'Georgia', serif;
-    transition: background-color 0.3s;
-}
-.menu-item:hover {
-    background-color: #e2a9bb;
-}
-.submenu-item {
-    background-color: #f9e5ec;
-    color: #4b2c3c;
-    padding: 0.3rem 0.5rem;
-    margin: 2px 0;
-    border-left: 3px solid #c37c98;
-    border-radius: 4px;
-}
-.content {
-    background-color: #fff;
-    padding: 2rem;
-    line-height: 1.6;
-    border-left: 2px solid #e2a9bb;
-}
-.chapter h1 {
-    font-size: 1.8rem;
-    color: #a03b63;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #e2a9bb;
-    padding-bottom: 0.3rem;
-}
-
-
-.main-header {
-    background-color: #a03b63;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    font-size: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-bottom: 4px solid #e2a9bb;
-}
-.main-header h1 {
+/* ---------- Global reset & typography ------------------------ */
+html, body {
     margin: 0;
-    font-size: 2rem;
+    padding: 0;
+    font-family: Georgia, serif;      /* classic scholarly font */
+    line-height: 1.6;
+    color: #000;                      /* black text */
+    background: #fff;                 /* white canvas */
 }
 
+/* ---------- Header ------------------------------------------ */
+header {
+    background: #000;                 /* black bar */
+    color: #fff;                      /* white text */
+    padding: 1rem;
+    text-align: center;
+}
 
-.main-wrapper {
-    display: flex;
-    height: calc(100vh - 100px);
+/* ---------- Sidebar (navigation) --------------------------- */
+.sidebar {
+    flex: 0 0 280px;                  /* fixed width */
+    background: #f0f0f0;              /* very light gray – still neutral */
+    color: #000;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Menu titles */
+.menu-item {
+    margin: 0.8rem 0;
+    font-weight: bold;
+}
+
+/* Sub‑menu entries – simple hover */
+.submenu-item {
+    margin: .2rem 0;
+    padding: .3rem;
+    cursor: pointer;
+}
+.submenu-item:hover {
+    background: #e0e0e0;              /* subtle gray on hover */
+}
+
+/* ---------- Main content area ------------------------------- */
+.content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Chapters – only the active one is shown */
+.chapter { display: none; }
+.chapter.active { display: block; }
+
+/* ---------- Headings --------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    line-height: 1.3;
+}
+
+/* ---------- Paragraphs ------------------------------------- */
+p {
+    margin: 0.8rem 0;
+}
+
+/* ---------- Links ------------------------------------------ */
+a {
+    color: #0000ee;                   /* standard blue link */
+    text-decoration: underline;
+}
+a:hover { text-decoration: none; }
+
+/* ---------- Responsive behaviour --------------------------- */
+@media (max-width: 768px) {
+    .sidebar { flex-basis: 200px; }
+}
+@media (max-width: 480px) {
+    .sidebar { display: none; }       /* hide sidebar on very small screens */
+}
+
+/* ---------- Simple monochrome button ---------------------- */
+.barbie-bow-btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: #000;                 /* solid black background */
+    color: #fff;                      /* white label */
+    font-size: 1.4rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 3rem auto;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.barbie-bow-btn:hover {
+    background: #333;                 /* slightly lighter on hover */
+    transform: scale(1.05);
 }
 </style>
 
@@ -213,50 +120,6 @@ body {
 <h1>Interface numérique du <em>Traité des hernies</em> de Pierre Franco</h1>
 </div><div class="main-wrapper"><div class="sidebar">
 
-<style>
-  .barbie-bow-btn {
-    display: inline-block;
-    position: relative;
-    padding: 1.5rem 3rem;
-    background: linear-gradient(to right, #ff69b4, #ff1493);
-    color: white;
-    font-size: 1.4rem;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
-    margin: 3rem auto;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-
-  .barbie-bow-btn::before,
-  .barbie-bow-btn::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 30px;
-    height: 30px;
-    background: #ff69b4;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    box-shadow: inset 0 0 10px rgba(255,255,255,0.6);
-  }
-
-  .barbie-bow-btn::before {
-    left: -25px;
-  }
-
-  .barbie-bow-btn::after {
-    right: -25px;
-  }
-
-  .barbie-bow-btn:hover {
-    background: linear-gradient(to right, #ff1493, #e91e63);
-    transform: scale(1.05) rotate(-1deg);
-  }
-</style>
         
 <a class="barbie-bow-btn" href="projet.html"> Le projet en détail</a>
 <a class="barbie-bow-btn" href="downloads.html"> Liens vers les documents </a>
@@ -12667,7 +12530,6 @@ duquel ie baille icy la figure.</p></div>
 </div></div>
 
 </body></html>
-
 
 
 
