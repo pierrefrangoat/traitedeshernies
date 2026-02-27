@@ -12431,7 +12431,30 @@ instrument tant necessaire, lequel i'ay fait faire à mon plaisir :
 duquel ie baille icy la figure.</p></div>
 </div></div>
 
+    <script>
+document.addEventListener('click', function (e) {
+    // 1️⃣  On ne réagit qu'aux éléments qui portent l'attribut data-target
+    const target = e.target.closest('[data-target]');
+    if (!target) return;
+
+    // 2️⃣  Id du chapitre à afficher (ex. "chap_0")
+    const chapId = target.getAttribute('data-target');
+
+    // 3️⃣  Masquer tous les chapitres
+    document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+
+    // 4️⃣  Afficher celui demandé
+    const chap = document.getElementById(chapId);
+    if (chap) chap.classList.add('active');
+
+    // 5️⃣  Revenir en haut de la zone .content (évite le scroll de la page)
+    const content = document.querySelector('.content');
+    if (content) content.scrollTop = 0;
+});
+</script>
+    
 </body></html>
+
 
 
 
