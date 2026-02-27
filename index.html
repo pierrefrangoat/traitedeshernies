@@ -49,11 +49,34 @@ header {
     background: #e0e0e0;              /* subtle gray on hover */
 }
 
-/* ---------- Main content area ------------------------------- */
+    /* -----------------------------------------------------------------
+   1️⃣ .content devient le cadre de référence pour les chapitres
+   ----------------------------------------------------------------- */
 .content {
     flex: 1;
     padding: 2rem;
-    overflow-y: auto;
+    overflow-y: auto;               /* scroll interne si le texte dépasse */
+    position: relative;             /* <-- nécessaire pour le positionnement absolu */
+    min-height: 400px;              /* hauteur minimale pour éviter les sauts */
+}
+
+/* -----------------------------------------------------------------
+   2️⃣ Chaque chapitre est placé au même endroit, mais masqué
+   ----------------------------------------------------------------- */
+.chapter {
+    display: none;                  /* invisible par défaut */
+    position: absolute;             /* superposé dans .content */
+    top: 0;
+    left: 0;
+    width: 100%;                    /* occupe toute la largeur disponible */
+    padding-right: 1rem;            /* espace pour éviter le débordement */
+}
+
+/* -----------------------------------------------------------------
+   3️⃣ Le chapitre actif devient visible
+   ----------------------------------------------------------------- */
+.chapter.active {
+    display: block;                 /* apparaît sans provoquer de scroll */
 }
 
 /* Chapters – only the active one is shown */
@@ -12530,6 +12553,7 @@ duquel ie baille icy la figure.</p></div>
 </div></div>
 
 </body></html>
+
 
 
 
