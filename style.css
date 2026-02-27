@@ -1,74 +1,80 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Georgia, serif;     
+    font-family: Georgia, serif;
     line-height: 1.6;
-    color: #000;                      
-    background: #91B6E6;              
+    color: #000;
+    background: #91B6E6;
 }
 
 header {
-    background: #86A2F0;                
-    color: #fff;                     
+    background: #86A2F0;
+    color: #fff;
     padding: 1rem;
     text-align: center;
 }
 
+/* -------------- En-tête principal ---------------- */
+.main-header {
+    background: #86A2F0;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* -------------- Conteneur global ---------------- */
+.main-wrapper {
+    display: flex;                 /* ← aligne sidebar et contenu côte à côte */
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    align-items: flex-start;       /* les deux colonnes partent du haut */
+}
+
+/* -------------- Sidebar / Menu ------------------ */
 .sidebar {
-    flex: 0 0 280px;                 
-    background: #f0f0f0;            
+    flex: 0 0 280px;
+    background: #f0f0f0;
     color: #000;
     padding: 1rem;
     overflow-y: auto;
+    max-height: 90vh;              /* scroll interne si le menu est long */
+    position: sticky;
+    top: 1rem;                     /* reste visible pendant le scroll */
 }
 
 .menu-item {
-    margin: 0.8rem 0;
+    margin: 0.8rem 0 0.2rem;
     font-weight: bold;
 }
 
 .submenu-item {
-    margin: .2rem 0;
-    padding: .3rem;
+    margin: 0.2rem 0;
+    padding: 0.3rem;
     cursor: pointer;
 }
 .submenu-item:hover {
-    background: #EBC67C;       
+    background: #EBC67C;
 }
 
-    /* -----------------------------------------------------------------
-   1️⃣ .content devient le cadre de référence pour les chapitres
-   ----------------------------------------------------------------- */
+/* -------------- Zone de contenu ---------------- */
 .content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;               /* scroll interne si le texte dépasse */
-    position: relative;             /* <-- nécessaire pour le positionnement absolu */
-    min-height: 400px;              /* hauteur minimale pour éviter les sauts */
+    flex: 1;                       /* prend tout l'espace restant à droite */
+    max-height: 90vh;
+    overflow-y: auto;              /* scroll interne si le texte est long */
+    padding: 1rem;
+    background: #fff;
+    border-left: 1px solid #ddd;
 }
 
-/* -----------------------------------------------------------------
-   2️⃣ Chaque chapitre est placé au même endroit, mais masqué
-   ----------------------------------------------------------------- */
+/* -------------- Chapitres ---------------------- */
 .chapter {
-    display: none;                  /* invisible par défaut */
-    position: absolute;             /* superposé dans .content */
-    top: 0;
-    left: 0;
-    width: 100%;                    /* occupe toute la largeur disponible */
-    padding-right: 1rem;            /* espace pour éviter le débordement */
+    display: none;                 /* caché par défaut */
 }
-
-/* -----------------------------------------------------------------
-   3️⃣ Le chapitre actif devient visible
-   ----------------------------------------------------------------- */
 .chapter.active {
-    display: block;                 /* apparaît sans provoquer de scroll */
+    display: block;                /* affiché quand actif */
 }
-
-/* Chapters – only the active one is shown */
-.chapter { display: none; }
-.chapter.active { display: block; }
 
 /* ---------- Headings --------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
@@ -83,76 +89,45 @@ p {
 
 /* ---------- Links ------------------------------------------ */
 a {
-    color: #0000ee;                   /* standard blue link */
+    color: #0000ee;
     text-decoration: underline;
 }
 a:hover { text-decoration: none; }
 
-/* ---------- Responsive behaviour --------------------------- */
-@media (max-width: 768px) {
-    .sidebar { flex-basis: 200px; }
-}
-@media (max-width: 480px) {
-    .sidebar { display: none; }       /* hide sidebar on very small screens */
-}
-
-/* ---------- Simple monochrome button ---------------------- */
+/* ---------- Bouton projet/téléchargements ------------------ */
 .barbie-bow-btn {
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    background: #000;                 /* solid black background */
-    color: #fff;                      /* white label */
-    font-size: 1.4rem;
+    display: block;
+    padding: 0.6rem 1rem;
+    background: #000;
+    color: #fff;
+    font-size: 0.9rem;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     text-decoration: none;
     border-radius: 50px;
-    margin: 3rem auto;
+    margin: 0.5rem 0;
     text-align: center;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 .barbie-bow-btn:hover {
-    background: #333;                 /* slightly lighter on hover */
-    transform: scale(1.05);
+    background: #333;
+    transform: scale(1.02);
 }
 
-/* -------------- Conteneur global ---------------- */
-.wrapper {
-    display: flex;                 /* ← aligne les enfants sur la même ligne */
-    gap: 1rem;                     /* espace entre le menu et le contenu */
-    max-width: 1200px;             /* largeur maximale (ajustable) */
-    margin: 0 auto;                /* centre horizontalement */
-}
-
-/* -------------- Menu --------------------------- */
-.nav {
-    flex: 0 0 200px;               /* largeur fixe du menu (peut être adaptée) */
-    display: flex;
-    flex-direction: column;       /* empile les boutons/SELECT verticalement */
-    gap: 0.5rem;
-}
-
-/* -------------- Zone de contenu ---------------- */
-.content {
-    flex: 1;                       /* prend tout l’espace restant */
-    max-height: 80vh;              /* hauteur maximale, évite le débordement de page */
-    overflow-y: auto;              /* scroll interne si le texte est long */
-    padding: 1rem;
-    border-left: 1px solid #ddd;  /* séparateur visuel (optionnel) */
-}
-
-/* -------------- Chapitres ---------------------- */
-.chapter {
-    display: none;                 /* caché par défaut */
-}
-.chapter.active {
-    display: block;                /* affiché lorsqu’il a la classe “active” */
-}
-
-/* -------------- Quelques styles utiles --------- */
+/* ---------- Nav links et select (si utilisés) -------------- */
 button.nav__link,
 select#chapterDropdown {
     width: 100%;
     padding: 0.4rem;
     font-size: 0.95rem;
+}
+
+/* ---------- Responsive -------------------------------------- */
+@media (max-width: 768px) {
+    .main-wrapper { flex-direction: column; }
+    .sidebar { flex: none; width: 100%; max-height: none; position: static; }
+    .content { max-height: none; }
+}
+@media (max-width: 480px) {
+    .sidebar { display: none; }
 }
