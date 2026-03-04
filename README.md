@@ -51,10 +51,6 @@ Les étapes de traitement appliquées aux données brutes sont les suivantes :
 
 > ⚠️ **Projet en version bêta.** Les données sont susceptibles d'évoluer. Le taux d'erreur de transcription n'est pas encore définitivement validé. Consulter la section « Vérifications qualité » pour l'état actuel.
 
-### Vérifications qualité
-
-*[Préciser les contrôles effectués — ex. : estimation du CER sur un échantillon de pages, relecture humaine sur X folios, comparaison avec une édition imprimée de référence, etc.]*
-
 ### Logiciels et dépendances
 
 | Outil | Version | Usage |
@@ -64,12 +60,6 @@ Les étapes de traitement appliquées aux données brutes sont les suivantes :
 | *[ex. Pandoc]* | *[x.x]* | Conversion entre formats (MD → TXT / HTML) |
 
 ---
-
-## Aperçu des données et fichiers
-
-### Convention de nommage
-
-*[Décrire la logique de nommage des fichiers de transcription — ex. un fichier par chapitre, nommé `franco_chap01.txt`, etc.]*
 
 ### Arborescence du dépôt
 
