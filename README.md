@@ -19,9 +19,9 @@
 
 ### Description du projet
 
-Ce dépôt contient les données et les ressources constitutives de l'édition numérique du *Traité des hernies* de Pierre Franco (1561), chirurgien français pionnier de la herniotomie et de la lithotomie. Le projet vise à produire une interface de consultation enrichie du texte, permettant l'accès à la transcription, aux images du document source et aux métadonnées associées.
+Ce dépôt contient les données et les ressources constitutives de l'édition numérique du *Traité des hernies* de Pierre Franco (1561). Le projet vise à produire une interface de consultation enrichie du texte, permettant l'accès à la transcription du document et aux métadonnées associées.
 
-Ce projet a été produit dans le cadre d'un mémoire de recherche présenté en 2025 à l'université de la Sorbonne.
+Ce projet a été produit dans le cadre d'un mémoire de recherche présenté en 2025 à Sorbonne Université. 
 
 ---
 
