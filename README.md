@@ -14,7 +14,6 @@
 | **Contact** | loudeplus@proton.me |
 | **Auteur du dépôt** | Lou Deplus |
 | **Langue des données** | Français (moyen français, XVIe s.) |
-| **Licence** | *[À préciser — ex. CC BY 4.0]* |
 | **État du projet** | Version bêta / prototype |
 | **Formats principaux** | HTML, Markdown (.md), Texte brut (.txt) |
 
