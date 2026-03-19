@@ -1,7 +1,7 @@
 # Interface numérique du *Traité des hernies* de Pierre Franco
 
 > Ce fichier README a été généré le 2026-03-04 par Lou Deplus.  
-> Dernière mise à jour : 2026-03-04
+> Dernière mise à jour : 2026-03-19
 
 ---
 
@@ -19,7 +19,7 @@
 
 ### Description du projet
 
-Ce dépôt contient les données et les ressources constitutives de l'édition numérique du *Traité des hernies* de Pierre Franco (1561). Le projet vise à produire une interface de consultation enrichie du texte, permettant l'accès à la transcription du document et aux métadonnées associées.
+Ce dépôt contient les données et les ressources constitutives de l'édition numérique du *Traité des hernies* de Pierre Franco (1561). Le projet vise à produire une interface de consultation enrichie du texte, pour  permettre un accès à la transcription du document et aux métadonnées associées.
 
 Ce projet a été produit dans le cadre d'un mémoire de recherche présenté en 2025 à Sorbonne Université. 
 
@@ -29,7 +29,7 @@ Ce projet a été produit dans le cadre d'un mémoire de recherche présenté en
 
 ### Conditions et cadre de production
 
-Ce projet est issu d'un mémoire de recherche soutenu en 2025 à l'université de la Sorbonne. Il s'inscrit dans une démarche d'édition numérique de sources médicales de l'époque moderne, visant à rendre accessibles des textes peu diffusés dans leur version numérique enrichie.
+Ce projet est issu d'un mémoire de recherche soutenu en 2025 à l'université de la Sorbonne. Il s'inscrit dans une démarche d'édition numérique de sources médicales de l'époque moderne, dans le but de rendre accessibles des textes peu diffusés dans leur version numérique enrichie.
 
 ### Sources et méthodes de collecte
 
